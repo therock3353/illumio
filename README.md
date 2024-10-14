@@ -11,7 +11,8 @@ Here is the general approach we will take.
     with key being port+lower_case(protocol) (Since matches should be case insensitive)
     There are only 10k such entries so no need to worry about data not fitting in memory.
 2. read flow-log file line by line.
-    for each_line in flow-log
+***
+    for each_log in flow-log
         here we need to parse the log based on version.
         for version 2 there will be different parser as compared to version 3 (for simplicity, I have
         only implemented version-2 parser)
@@ -21,8 +22,11 @@ Here is the general approach we will take.
             1. both port+protocol is present:
                 if port+protocol combo present in reference lookup table, update count
                 else update unknown/untagged count
-            2.
-
+            2. if only protocol is present:
+                - It could mean that this rule applies to all the ports {This use case is not handled as of now}
+                - ICMP protocol where port is Not Applicable
+            3. Unknown use case where both port, protocol is not present. 
+***
 
 Assumptions:
 ================
