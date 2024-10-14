@@ -17,6 +17,8 @@ class OutputGenerator(object):
                 for line in self.data:
                     if line and isinstance(line[0], list):
                         for row in line:
+                            print(row)
                             writer.writerow(row)
                     else:
+                        print(line)
                         writer.writerow(line)
