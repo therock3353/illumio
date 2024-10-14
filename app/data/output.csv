@@ -1,0 +1,14 @@
+TAG Count:
+TAG,Count
+Unknown,1
+sv_p2,1
+sv_p3,2
+sv_p1,1
+
+Port Protocol Uniq Count:
+PORT,PROTOCOL,Count
+22,tcp,1
+443,tcp,1
+31,udp,2
+25,tcp,1
+
